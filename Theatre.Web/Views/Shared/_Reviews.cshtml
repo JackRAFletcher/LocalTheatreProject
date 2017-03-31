@@ -1,0 +1,18 @@
+﻿@model Theatre.Web.Models.UpcomingPassedReviewsViewModel
+
+<h1 class="event-group-heading">Upcoming Reviews</h1>
+
+<div class="row">
+    @if (Model.UpcomingReviews.Any())
+    {
+        @Html.DisplayFor(x => x.UpcomingReviews)
+    }
+    else
+    {
+        <div class="col-md-4 col-sm-6 col-xs-12">No events</div>
+    }
+
+
+</div>
+
+<h1 class="event-group-heading">Passed Events</h1>
