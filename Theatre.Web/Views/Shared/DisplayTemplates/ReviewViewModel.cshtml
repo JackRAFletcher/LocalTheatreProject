@@ -4,11 +4,11 @@
     <div class="event-box">
 
         <h2>@Model.Title</h2>
-        <span class="date">@Model.StartDateTime</span>
+        @*<span class="date">@Model.StartDateTime</span>
         @if (Model.Duration != null)
         {
             <span class="duration">(@Model.Duration.Value.ToString(@"hh\:mm") hours)</span>
-        }
+        }*@
         @if (Model.Author != null)
         {
             <div class="author">Author: @Model.Author</div>
@@ -17,10 +17,8 @@
         {
             <div class="location">Location: @Model.Location</div>
         }
-        </div>
-
-    <div id="event-details-@Model.Id">
-        @Ajax.ActionLink("View Details »", "ReviewDetailsById", "Home",
+        <div id="event-details-@Model.Id">
+            @Ajax.ActionLink("View Details »", "ReviewDetailsById", "Home",
              new { id = Model.Id },
              new AjaxOptions
              {
@@ -28,6 +26,7 @@
                  UpdateTargetId = "review-details-" + Model.Id
              }, new { @class = "btn btn-default" })
 
-    </div>
-    </div>
+        </div>
+        </div>
+</div>
 

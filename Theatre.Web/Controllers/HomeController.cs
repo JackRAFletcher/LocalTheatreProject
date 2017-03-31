@@ -34,6 +34,7 @@ namespace Theatre.Web.Controllers
             var currentUserId = this.User.Identity.GetUserId();
             var isAdmin = this.IsAdmin();
             var ReviewDetails = this.db.Reviews
+                .Where(r => r.Id == id)
                 .Where(r => r.IsPublic || isAdmin || (r.AuthorId != null && r.AuthorId == currentUserId))
                 .Select(ReviewDetailsViewModel.ViewModel)
                 .FirstOrDefault();
