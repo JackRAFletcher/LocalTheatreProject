@@ -1,7 +1,7 @@
 ﻿@model Theatre.Web.Models.ReviewViewModel
 
 <div class="col-md-4 col-sm-6 col-xs-12">
-    <div class="event-box">
+    <div class="review-box">
 
         <h2>@Model.Title</h2>
         @*<span class="date">@Model.StartDateTime</span>
@@ -17,7 +17,7 @@
         {
             <div class="location">Location: @Model.Location</div>
         }
-        <div id="event-details-@Model.Id">
+        <div id="review-details-@Model.Id">
             @Ajax.ActionLink("View Details »", "ReviewDetailsById", "Home",
              new { id = Model.Id },
              new AjaxOptions

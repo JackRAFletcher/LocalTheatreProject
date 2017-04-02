@@ -108,7 +108,7 @@ namespace Theatre.Data.Migrations
 
             context.Reviews.Add(new Review()
             {
-                Title = "Passed Event <Anonymous>",
+                Title = "PassedReview <Anonymous>",
                 StartDateTime = DateTime.Now.Date.AddDays(-2).AddHours(10).AddMinutes(30),
                 Duration = TimeSpan.FromHours(1.5),
                 Comments = new HashSet<Comment>() {
@@ -123,14 +123,14 @@ namespace Theatre.Data.Migrations
 
             context.Reviews.Add(new Review()
             {
-                Title = "Passed Event <Again>",
+                Title = "PassedReview <Again>",
                 StartDateTime = DateTime.Now.Date.AddDays(-10).AddHours(18).AddMinutes(00),
                 Duration = TimeSpan.FromHours(3),
             });
 
             context.Reviews.Add(new Review()
             {
-                Title = "Passed Event",
+                Title = "PassedReview",
                 StartDateTime = DateTime.Now.Date.AddDays(-2).AddHours(12).AddMinutes(0),
                 Author = context.Users.First(),
                 Comments = new HashSet<Comment>() {

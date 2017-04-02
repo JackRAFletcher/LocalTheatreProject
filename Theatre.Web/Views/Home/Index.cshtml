@@ -4,8 +4,10 @@
 }
 
 
-<h1 class="event-group-heading">Reviews</h1>
-
+<h1 class="review-group-heading">Reviews</h1>
+@section scripts{
+    @Scripts.Render("~/bundles/ajax")
+}
 <div class="row">
     @if (Model.UpcomingReviews.Any()) { 
         @Html.DisplayFor(x => x.UpcomingReviews)
@@ -14,9 +16,7 @@
     {
         <div class="col-md-4 col-sm-6 col-xs-12">NO REVIEWS TO DISPLAY</div>
     }
-    @section scripts{
-        @Scripts.Render("~/bundles/ajax")
-    }
+    
 </div>
 <div class="row">
     @if (Model.PassedReviews.Any())
