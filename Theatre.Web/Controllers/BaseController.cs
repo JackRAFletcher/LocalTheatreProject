@@ -8,6 +8,7 @@ using Theatre.Data;
 
 namespace Theatre.Web.Controllers
 {
+    [ValidateInput(false)]
     public class BaseController : Controller
     {
         protected ApplicationDbContext db = new ApplicationDbContext();
