@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/ajax")
 }
 <div class="row">
-    @if (Model.UpcomingReviews.Any()) { 
+    @if (!Model.UpcomingReviews.Any()) { 
         @Html.DisplayFor(x => x.UpcomingReviews)
     }
     else
