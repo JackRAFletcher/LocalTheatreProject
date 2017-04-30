@@ -26,7 +26,7 @@ namespace Theatre.Data
 
         public virtual ApplicationUser Author { get; set; }
 
-        public int EventId { get; set; }
+        public int ReviewId { get; set; }
 
         [Required]
         public virtual Review Review { get; set; }
