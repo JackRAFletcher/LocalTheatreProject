@@ -55,6 +55,7 @@ namespace Theatre.Data.Migrations
             var userManager = new UserManager<ApplicationUser>(userStore);
             userManager.PasswordValidator = new PasswordValidator
             {
+                //password parameters
                 RequiredLength = 1,
                 RequireNonLetterOrDigit = false,
                 RequireDigit = false,

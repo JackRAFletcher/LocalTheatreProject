@@ -13,7 +13,7 @@ namespace Theatre.Data
         {
             this.Date = DateTime.Now;
         }
-
+        //get and set all atributes for the comments
         public int Id { get; set; }
 
         [Required]

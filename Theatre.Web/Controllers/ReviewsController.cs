@@ -15,6 +15,7 @@ namespace Theatre.Web.Controllers
     {
         public ActionResult My()
         {
+            //code for the my reviews page
             string currentUserId = this.User.Identity.GetUserId();
             var Reviews = this.db.Reviews
                 .Where(e => e.AuthorId == currentUserId)
@@ -40,6 +41,7 @@ namespace Theatre.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ReviewInputModel model)
         {
+            //code for creating reviews
             if (model != null && this.ModelState.IsValid)
             {
                 var e = new Review()
@@ -79,6 +81,8 @@ namespace Theatre.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ReviewInputModel model)
         {
+
+            //code for editing reviews
             var ReviewToEdit = this.LoadReview(id);
             if (ReviewToEdit == null)
             {
@@ -106,6 +110,7 @@ namespace Theatre.Web.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
+            //code for getting a review to delete
             var ReviewToDelete = this.LoadReview(id);
             if (ReviewToDelete == null)
             {
@@ -121,6 +126,7 @@ namespace Theatre.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, ReviewInputModel model)
         {
+            //code for removing a review from the database 
             var ReviewToDelete = this.LoadReview(id);
             if (ReviewToDelete == null)
             {
@@ -136,6 +142,7 @@ namespace Theatre.Web.Controllers
 
         private Review LoadReview(int id)
         {
+            //code for loading a review
             var currentUserId = this.User.Identity.GetUserId();
             var isAdmin = this.IsAdmin();
             var ReviewToEdit = this.db.Reviews

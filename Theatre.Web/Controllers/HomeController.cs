@@ -12,6 +12,7 @@ namespace Theatre.Web.Controllers
     {
         public ActionResult Index()
         {
+            //order the reviews based on their start date
             var reviews = this.db.Reviews
                 .OrderBy(e => e.StartDateTime)
                 .Where(e => e.IsPublic)
@@ -31,6 +32,7 @@ namespace Theatre.Web.Controllers
 
         public ActionResult ReviewDetailsById(int id)
         {
+            //order reviews based on their id
             var currentUserId = this.User.Identity.GetUserId();
             var isAdmin = this.IsAdmin();
             var ReviewDetails = this.db.Reviews

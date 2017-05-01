@@ -20,6 +20,7 @@ namespace Theatre.Web.Models
             {
                 return r => new ReviewDetailsViewModel()
                 {
+                    //return review
                     Id = r.Id,
                     Description = r.Description,
                     Comments = r.Comments.AsQueryable().Select(CommentViewModel.ViewModel),

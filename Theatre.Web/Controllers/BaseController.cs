@@ -14,6 +14,7 @@ namespace Theatre.Web.Controllers
         protected ApplicationDbContext db = new ApplicationDbContext();
 
         public bool IsAdmin()
+            //check if user is an admin based on their role
         {
             var currentUserId = this.User.Identity.GetUserId();
             var isAdmin = (currentUserId != null && this.User.IsInRole("Administrator"));

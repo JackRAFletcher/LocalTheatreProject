@@ -9,6 +9,7 @@ namespace Theatre.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        //define the collections of reviews and comments
         public IDbSet<Review> Reviews { get; set; }
 
         public IDbSet<Comment> Comments { get; set; }

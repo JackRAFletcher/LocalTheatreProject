@@ -14,6 +14,7 @@ namespace Theatre.Data
     
         public class ApplicationUser : IdentityUser
         {
+
         [Required]
         public string FullName { get; set; }
 
